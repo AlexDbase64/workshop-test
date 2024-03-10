@@ -9,7 +9,7 @@ test('user should be able to register', async ({ page }) => {
   await page.getByRole('main').getByPlaceholder('Please Enter Your Email').fill(email);
   await page.getByPlaceholder('Please Enter Your First Name').fill('playwrite');
   await page.getByPlaceholder('Please Enter Your Last Name').fill('tester');
-  await page.getByPlaceholder('Please Enter Your Password').fill('eamil');
+  await page.getByPlaceholder('Please Enter Your Password').fill(email);
   await page.getByRole('button', { name: 'Sign Up' }).click();
   await expect(page.getByRole('heading', { name: 'Account Details' })).toBeVisible();
 });
